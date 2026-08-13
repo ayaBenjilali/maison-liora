@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #EFE0CE;
+  color: #1A120D;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, #efe0ce 0%, #f8f0e5 38%, #e4ceb3 100%),
+    radial-gradient(circle at 12% 4%, rgba(91, 58, 41, 0.22), transparent 24rem);
+  color: #1f1712;
+  text-rendering: geometricPrecision;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(31, 23, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 23, 18, 0.03) 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: 0.52;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+iframe {
+  display: block;
+}
+
+::selection {
+  background: #1A120D;
+  color: #fffdf8;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #5b3a29;
+  opacity: 1;
+}
+
+input,
+select,
+textarea {
+  color: #1f1712;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(185, 139, 97, 0.72);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+
+
+
+header a,
+footer a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 420px) {
+  header nav {
+    height: 66px;
+    padding-inline: 1rem;
+  }
+}
+
+/* Custom Datetime Input Styling */
+.custom-datetime-input {
+  min-height: 50px !important;
+  height: 50px !important;
+  position: relative;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  font-family: inherit;
+  font-weight: 600;
+  color: #1A120D !important;
+  background-color: #EFE0CE !important;
+}
+
+.custom-datetime-input::-webkit-datetime-edit {
+  color: transparent !important;
+}
+
+.custom-datetime-input.has-value::-webkit-datetime-edit,
+.custom-datetime-input:focus::-webkit-datetime-edit {
+  color: #1A120D !important;
+}
+
+.custom-datetime-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Custom styled select arrow for a premium feel on iOS and other devices */
+select.reservation-field {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%233F281D' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E") !important;
+  background-position: right 1rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.25rem !important;
+  padding-right: 2.5rem !important;
+}
